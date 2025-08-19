@@ -12,12 +12,15 @@
         href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
     <!-- font -->
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Bootstrap Icons -->
     <!-- style -->
-    <link rel="stylesheet" href="/style/style.css">
     <!-- bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
     <!-- bootstrap -->
+    <link rel="stylesheet" href="/style/style.css">
     <!-- style -->
 </head>
 
@@ -27,7 +30,7 @@
         <div class="topbar py-1">
             <div class="container-lg px-3">
                 <div class="d-flex flex-wrap justify-content-between align-items-center">
-                    <div class="meta d-flex align-items-center flex-wrap text-dark">
+                    <div class="gap-4 d-flex align-items-center flex-wrap text-dark">
                         <span><strong>Madrashah Code:</strong> 11004</span>
                         <span><strong>EIIN:</strong> 107906</span>
                     </div>
@@ -37,13 +40,13 @@
                         <span class="d-flex align-items-center"><i class="bi bi-calendar3 me-2"></i><span
                                 id="date">16/08/2025</span></span>
                     </div>
-                    <div class="meta d-flex align-items-center">
+                    <div class="d-flex align-items-center">
                         <div class="ms-3 dropdown">
-                            <button class="btn btn-sm btn-apply text-white dropdown-toggle fw-bold" data-bs-toggle="dropdown"
-                                aria-expanded="false">
+                            <button class="btn btn-sm text-white dropdown-toggle fw-bold" id="applyDropdown"
+                                data-bs-toggle="dropdown" aria-expanded="false">
                                 অনলাইন আবেদন
                             </button>
-                            <ul class="dropdown-menu dropdown-menu-end">
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="applyDropdown">
                                 <li><a class="dropdown-item" href="#">ক্লাস ১ ভর্তি</a></li>
                                 <li><a class="dropdown-item" href="#">ফর্ম পূরণ</a></li>
                                 <li><a class="dropdown-item" href="#">সাহায্য কেন্দ্র</a></li>
@@ -54,108 +57,1026 @@
             </div>
         </div>
 
-        <!-- ===== Notices / Marquee ===== -->
-        <div class="notice-wrap py-1">
-            <div class="container-lg px-3 d-flex align-items-center gap-3">
-                <span class="notice-label">নোটিশঃ</span>
-                <div class="ticker flex-grow-1">
-                    <div class="ticker__track">
-                        <a href="#">২০২৫ এর সমাপনী</a>
-                        <span class="sep"></span>
-                        <a href="#">২০২৪-২০২৫ শিক্ষাবর্ষে কাবিল ১ম বর্ষের শ্রেণি কার্যক্রম শুরু হচ্ছে</a>
-                        <span class="sep"></span>
-                        <a href="#">আলিম পরীক্ষা ২০২৫ এর ফলাফল প্রকাশের বিবৃতি</a>
-                        <span class="sep"></span>
-                        <a href="#">কামিল পরীক্ষা ২০২৩ এর কৃপা ফলাফল প্রকাশের বিবৃতি</a>
-                        <span class="sep"></span>
-                        <a href="#">কাবিল</a>
-                        <span class="sep"></span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
         <!-- ===== Main Navigation ===== -->
-        <nav class="navbar navbar-expand-lg navbar-dark mainnav">
+        <nav class="navbar navbar-expand-lg navbar-dark mainnav border-top border-1 border-opacity-25">
             <div class="container-lg px-3">
-                <a class="navbar-brand fw-bold" href="#">হোম</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainnav"
+                <!-- Keep brand if you have a logo; otherwise use the first nav item as 'Home' -->
+                <button class="navbar-toggler mb-2" type="button" data-bs-toggle="collapse" data-bs-target="#mainnav"
                     aria-controls="mainnav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+
                 <div class="collapse navbar-collapse" id="mainnav">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 align-items-lg-stretch">
+
+                        <!-- Active Home -->
+                        <li class="nav-item">
+                            <a class="nav-link active text-dark px-3 d-flex align-items-center fw-normal text-white"
+                                href="#" aria-current="page">হোম</a>
+                        </li>
+
+                        <!-- Dropdowns -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">পরিচিতি <i
-                                    class="bi bi-caret-down-fill caret"></i></a>
-                            <ul class="dropdown-menu">
+                            <a class="nav-link d-flex align-items-center text-white fw-normal" data-bs-toggle="dropdown"
+                                href="#" data-bs-auto-close="outside">
+                                পরিচিতি
+                                <span>
+                                    <svg viewBox="0 0 24 24" height="24px" width="24px" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round">
+                                        </g>
+                                        <g id="SVGRepo_iconCarrier">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M12.7071 14.7071C12.3166 15.0976 11.6834 15.0976 11.2929 14.7071L6.29289 9.70711C5.90237 9.31658 5.90237 8.68342 6.29289 8.29289C6.68342 7.90237 7.31658 7.90237 7.70711 8.29289L12 12.5858L16.2929 8.29289C16.6834 7.90237 17.3166 7.90237 17.7071 8.29289C18.0976 8.68342 18.0976 9.31658 17.7071 9.70711L12.7071 14.7071Z"
+                                                fill="#ffffff"></path>
+                                        </g>
+                                    </svg>
+                                </span>
+                            </a>
+                            <ul class="dropdown-menu shadow">
                                 <li><a class="dropdown-item" href="#">ইতিহাস</a></li>
                                 <li><a class="dropdown-item" href="#">প্রশাসন</a></li>
                                 <li><a class="dropdown-item" href="#">শিক্ষকবৃন্দ</a></li>
                             </ul>
                         </li>
+
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">একাডেমিক <i
-                                    class="bi bi-caret-down-fill caret"></i></a>
-                            <ul class="dropdown-menu">
+                            <a class="nav-link d-flex align-items-center fw-normal" data-bs-toggle="dropdown" href="#"
+                                data-bs-auto-close="outside">
+                                একাডেমিক
+                                <span>
+                                    <svg viewBox="0 0 24 24" height="24px" width="24px" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round">
+                                        </g>
+                                        <g id="SVGRepo_iconCarrier">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M12.7071 14.7071C12.3166 15.0976 11.6834 15.0976 11.2929 14.7071L6.29289 9.70711C5.90237 9.31658 5.90237 8.68342 6.29289 8.29289C6.68342 7.90237 7.31658 7.90237 7.70711 8.29289L12 12.5858L16.2929 8.29289C16.6834 7.90237 17.3166 7.90237 17.7071 8.29289C18.0976 8.68342 18.0976 9.31658 17.7071 9.70711L12.7071 14.7071Z"
+                                                fill="#ffffff"></path>
+                                        </g>
+                                    </svg>
+                                </span>
+                            </a>
+                            <ul class="dropdown-menu shadow">
                                 <li><a class="dropdown-item" href="#">কারিকুলাম</a></li>
                                 <li><a class="dropdown-item" href="#">ক্লাস রুটিন</a></li>
                             </ul>
                         </li>
+
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">ভর্তি <i
-                                    class="bi bi-caret-down-fill caret"></i></a>
-                            <ul class="dropdown-menu">
+                            <a class="nav-link d-flex align-items-center fw-normal" data-bs-toggle="dropdown" href="#">
+                                ভর্তি
+                                <span>
+                                    <svg viewBox="0 0 24 24" height="24px" width="24px" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round">
+                                        </g>
+                                        <g id="SVGRepo_iconCarrier">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M12.7071 14.7071C12.3166 15.0976 11.6834 15.0976 11.2929 14.7071L6.29289 9.70711C5.90237 9.31658 5.90237 8.68342 6.29289 8.29289C6.68342 7.90237 7.31658 7.90237 7.70711 8.29289L12 12.5858L16.2929 8.29289C16.6834 7.90237 17.3166 7.90237 17.7071 8.29289C18.0976 8.68342 18.0976 9.31658 17.7071 9.70711L12.7071 14.7071Z"
+                                                fill="#ffffff"></path>
+                                        </g>
+                                    </svg>
+                                </span>
+                            </a>
+                            <ul class="dropdown-menu shadow">
                                 <li><a class="dropdown-item" href="#">ভর্তি নির্দেশিকা</a></li>
                                 <li><a class="dropdown-item" href="#">ফরম</a></li>
                             </ul>
                         </li>
+
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">প্রকাশনা <i
-                                    class="bi bi-caret-down-fill caret"></i></a>
-                            <ul class="dropdown-menu">
+                            <a class="nav-link d-flex align-items-center fw-normal" data-bs-toggle="dropdown" href="#">
+                                প্রকাশনা
+                                <span>
+                                    <svg viewBox="0 0 24 24" height="24px" width="24px" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round">
+                                        </g>
+                                        <g id="SVGRepo_iconCarrier">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M12.7071 14.7071C12.3166 15.0976 11.6834 15.0976 11.2929 14.7071L6.29289 9.70711C5.90237 9.31658 5.90237 8.68342 6.29289 8.29289C6.68342 7.90237 7.31658 7.90237 7.70711 8.29289L12 12.5858L16.2929 8.29289C16.6834 7.90237 17.3166 7.90237 17.7071 8.29289C18.0976 8.68342 18.0976 9.31658 17.7071 9.70711L12.7071 14.7071Z"
+                                                fill="#ffffff"></path>
+                                        </g>
+                                    </svg>
+                                </span>
+                            </a>
+                            <ul class="dropdown-menu shadow">
                                 <li><a class="dropdown-item" href="#">বিজ্ঞপ্তি</a></li>
                                 <li><a class="dropdown-item" href="#">রিপোর্ট</a></li>
                             </ul>
                         </li>
+
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">আইটি সেবা <i
-                                    class="bi bi-caret-down-fill caret"></i></a>
-                            <ul class="dropdown-menu">
+                            <a class="nav-link d-flex align-items-center fw-normal" href="#" data-bs-toggle="dropdown">
+                                আইটি সেবা
+                                <span>
+                                    <svg viewBox="0 0 24 24" height="24px" width="24px" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round">
+                                        </g>
+                                        <g id="SVGRepo_iconCarrier">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M12.7071 14.7071C12.3166 15.0976 11.6834 15.0976 11.2929 14.7071L6.29289 9.70711C5.90237 9.31658 5.90237 8.68342 6.29289 8.29289C6.68342 7.90237 7.31658 7.90237 7.70711 8.29289L12 12.5858L16.2929 8.29289C16.6834 7.90237 17.3166 7.90237 17.7071 8.29289C18.0976 8.68342 18.0976 9.31658 17.7071 9.70711L12.7071 14.7071Z"
+                                                fill="#ffffff"></path>
+                                        </g>
+                                    </svg>
+                                </span>
+                            </a>
+                            <ul class="dropdown-menu shadow">
                                 <li><a class="dropdown-item" href="#">পোর্টাল</a></li>
                                 <li><a class="dropdown-item" href="#">সহায়িকা</a></li>
                             </ul>
                         </li>
+
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">শাখা প্রতিষ্ঠান
-                                <i class="bi bi-caret-down-fill caret"></i></a>
-                            <ul class="dropdown-menu">
+                            <a class="nav-link d-flex align-items-center fw-normal" href="#" data-bs-toggle="dropdown">
+                                শাখা প্রতিষ্ঠান
+                                <span>
+                                    <svg viewBox="0 0 24 24" height="24px" width="24px" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round">
+                                        </g>
+                                        <g id="SVGRepo_iconCarrier">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M12.7071 14.7071C12.3166 15.0976 11.6834 15.0976 11.2929 14.7071L6.29289 9.70711C5.90237 9.31658 5.90237 8.68342 6.29289 8.29289C6.68342 7.90237 7.31658 7.90237 7.70711 8.29289L12 12.5858L16.2929 8.29289C16.6834 7.90237 17.3166 7.90237 17.7071 8.29289C18.0976 8.68342 18.0976 9.31658 17.7071 9.70711L12.7071 14.7071Z"
+                                                fill="#ffffff"></path>
+                                        </g>
+                                    </svg>
+                                </span>
+                            </a>
+                            <ul class="dropdown-menu shadow">
                                 <li><a class="dropdown-item" href="#">মাদ্রাসা শাখা ১</a></li>
                                 <li><a class="dropdown-item" href="#">মাদ্রাসা শাখা ২</a></li>
                             </ul>
                         </li>
+
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">মিডিয়া <i
-                                    class="bi bi-caret-down-fill caret"></i></a>
-                            <ul class="dropdown-menu">
+                            <a class="nav-link d-flex align-items-center fw-normal" data-bs-toggle="dropdown" href="#">
+                                মিডিয়া
+                                <span>
+                                    <svg viewBox="0 0 24 24" height="24px" width="24px" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round">
+                                        </g>
+                                        <g id="SVGRepo_iconCarrier">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M12.7071 14.7071C12.3166 15.0976 11.6834 15.0976 11.2929 14.7071L6.29289 9.70711C5.90237 9.31658 5.90237 8.68342 6.29289 8.29289C6.68342 7.90237 7.31658 7.90237 7.70711 8.29289L12 12.5858L16.2929 8.29289C16.6834 7.90237 17.3166 7.90237 17.7071 8.29289C18.0976 8.68342 18.0976 9.31658 17.7071 9.70711L12.7071 14.7071Z"
+                                                fill="#ffffff"></path>
+                                        </g>
+                                    </svg>
+                                </span>
+                            </a>
+                            <ul class="dropdown-menu shadow">
                                 <li><a class="dropdown-item" href="#">ফটো গ্যালারি</a></li>
                                 <li><a class="dropdown-item" href="#">ভিডিও</a></li>
                             </ul>
                         </li>
-                        <li class="nav-item"><a class="nav-link" href="#">যোগাযোগ</a></li>
+
+                        <li class="nav-item"><a class="nav-link fw-normal" data-bs-toggle="dropdown"
+                                href="#">যোগাযোগ</a></li>
+
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">লগইন <i
-                                    class="bi bi-caret-down-fill caret"></i></a>
-                            <ul class="dropdown-menu">
+                            <a class="nav-link d-flex align-items-center fw-normal" href="#">
+                                লগইন
+                                <span>
+                                    <svg viewBox="0 0 24 24" height="24px" width="24px" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round">
+                                        </g>
+                                        <g id="SVGRepo_iconCarrier">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M12.7071 14.7071C12.3166 15.0976 11.6834 15.0976 11.2929 14.7071L6.29289 9.70711C5.90237 9.31658 5.90237 8.68342 6.29289 8.29289C6.68342 7.90237 7.31658 7.90237 7.70711 8.29289L12 12.5858L16.2929 8.29289C16.6834 7.90237 17.3166 7.90237 17.7071 8.29289C18.0976 8.68342 18.0976 9.31658 17.7071 9.70711L12.7071 14.7071Z"
+                                                fill="#ffffff"></path>
+                                        </g>
+                                    </svg>
+                                </span></a>
+                            <ul class="dropdown-menu shadow">
                                 <li><a class="dropdown-item" href="#">শিক্ষার্থী</a></li>
                                 <li><a class="dropdown-item" href="#">শিক্ষক</a></li>
                             </ul>
                         </li>
+
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
+
+    <main>
+        <div id="customCarousel" class="carousel slide carousel-fad position-relative" data-bs-ride="carousel">
+            <!-- Carousel Inner -->
+            <div class="carousel-inner hero-ratio">
+                <div class="carousel-item active position-relative" data-bs-interval="5000">
+                    <img src="https://amtalibhmadrasa.edu.bd/media/images/1745816968860064850.jpg" class="d-block w-100"
+                        alt="Gate">
+                    <div class="position-absolute carousel-info">
+                        <h5>স্বাগতম, আমতলী বন্দর হোসাইনিয়া কামিল মাদরাসা</h5>
+                    </div>
+                </div>
+                <div class="carousel-item position-relative" data-bs-interval="5000">
+                    <img src="https://amtalibhmadrasa.edu.bd/media/images/1745816339307797311.jpg" class="d-block w-100"
+                        alt="Gate">
+                    <div class="position-absolute carousel-info">
+                        <h5>আধুনিক অবকাঠামো</h5>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Controls -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#customCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon">
+                    <i class="bi bi-arrow-left"></i>
+                </span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#customCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon">
+                    <i class="bi bi-arrow-right"></i>
+                </span>
+                <span class="visually-hidden">Next</span>
+            </button>
+
+            <!-- Custom Thumbnail Indicators -->
+            <div class="carousel-indicators custom-indicators">
+                <button type="button" data-bs-target="#customCarousel" data-bs-slide-to="0" class="active">
+                    <img src="https://amtalibhmadrasa.edu.bd/media/images/1745816968860064850.jpg" alt="thumb1">
+                </button>
+                <button type="button" data-bs-target="#customCarousel" data-bs-slide-to="1">
+                    <img src="https://amtalibhmadrasa.edu.bd/media/images/1745816339307797311.jpg" alt="thumb2">
+                </button>
+            </div>
+        </div>
+
+        <!-- ===== Notices / Marquee ===== -->
+        <div class="notice-wrap">
+            <div class="pl-3">
+                <div class="row align-items-center g-0">
+                    <div class="notice-label-box col-4 col-sm-3 col-lg-2 d-flex justify-content-center">
+                        <span class="notice-label">নোটিশঃ</span>
+                    </div>
+                    <div class="col-8 col-sm-9 col-lg-10">
+                        <div class="ticker">
+                            <div class="ticker__track">
+                                <a href="#">২০২৫ এর সমাপনী</a>
+                                <span class="sep"></span>
+                                <a href="#">২০২৪-২০২৫ শিক্ষাবর্ষে কাবিল ১ম বর্ষের শ্রেণি কার্যক্রম শুরু হচ্ছে</a>
+                                <span class="sep"></span>
+                                <a href="#">আলিম পরীক্ষা ২০২৫ এর ফলাফল প্রকাশের বিবৃতি</a>
+                                <span class="sep"></span>
+                                <a href="#">কামিল পরীক্ষা ২০২৩ এর কৃপা ফলাফল প্রকাশের বিবৃতি</a>
+                                <span class="sep"></span>
+                                <a href="#">কাবিল</a>
+                                <span class="sep"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section class="container-lg px-3 my-4">
+            <div class="row g-3">
+                <div class="col-lg-9 col-md-8 mb-4 mb-md-0">
+                    <!-- প্রতিষ্ঠানের ইতিহাস -->
+                    <article class="mb-4">
+                        <div class="panel">
+                            <div class="panel__header">
+                                <h3 class="panel__title">প্রতিষ্ঠানের ইতিহাস</h3>
+                            </div>
+                            <div class="panel__body">
+                                <p>
+                                    বাংলাদেশের সর্ব দক্ষিণের বরগুনাগ্রের মোহনা-নদী পাড়ার বিচিত্র বর্ণণা জেলার অন্তর্গত
+                                    আমতলী উপজেলার আমতলী পৌরসভার প্রাণকেন্দ্রে বরগুনা জেলার প্রাচীনতম ও ঐতিহ্যবাহী আমতলী
+                                    বন্দর হোসাইনিয়া কামিল মাদরাসাটি অবস্থিত। যুগে-শম্যানে ভরা, অপূর্ব সৌন্দর্য মণ্ডিত
+                                    বিশাল ক্যাম্পাসটি অত্যন্ত মনোরম। মাদ্রাসা শিক্ষা বোর্ডে অধীন এ মাদ্রাসাটি প্রতিষ্ঠার
+                                    পর থেকে খুবই সুনামের সাথে শিক্ষা ও কৃতিত্বে স্বাক্ষর রেখেছে। বন‍্যা কবলিত অঞ্চল এ
+                                    এলাকার গরীব জনসাধারণের মাঝে উচ্চ শিক্ষার একমাত্র নির্ভরযোগ্য প্রতিষ্ঠান। এ মাদ্রাসা
+                                    থেকে পাশ করা অনেক কৃতি শিক্ষার্থী দেশে-বিদেশে উচ্চ পদে কর্মরত আছেন।
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- noticeboard -->
+                    <div class="panel noticeboard mb-4">
+                        <div class="panel__header">
+                            <h3 class="panel__title">নোটিশ বোর্ড</h3>
+                        </div>
+                        <div class="panel__body p-0">
+                            <ul class="notice-list list-unstyled mb-0">
+                                <li class="notice-item d-flex align-items-center">
+                                    <div class="notice-date text-center">
+                                        <div class="mon">Aug</div>
+                                        <div class="day">02</div>
+                                        <div class="yr">2025</div>
+                                    </div>
+                                    <a href="#" class="notice-text flex-grow-1">গর্ভবতিদের মিটিং</a>
+                                    <div class="notice-views text-muted d-flex flex-column align-items-center">
+                                        <i class="bi bi-eye"></i>
+                                        <span>13</span>
+                                    </div>
+                                </li>
+                                <li class="notice-item d-flex align-items-center">
+                                    <div class="notice-date text-center">
+                                        <div class="mon">Aug</div>
+                                        <div class="day">02</div>
+                                        <div class="yr">2025</div>
+                                    </div>
+                                    <a href="#" class="notice-text flex-grow-1">কামিল ১ম বর্ষ কামিল ১ম বর্ষের ১ম
+                                        ক্লাস।</a>
+                                    <div class="notice-views text-muted d-flex flex-column gap-0 align-items-center">
+                                        <span>
+                                            <i class="bi bi-eye me-1"></i>
+                                        </span>
+                                        <span>
+                                            8
+                                        </span>
+                                    </div>
+                                </li>
+                                <li class="notice-item d-flex align-items-center">
+                                    <div class="notice-date text-center">
+                                        <div class="mon">Oct</div>
+                                        <div class="day">24</div>
+                                        <div class="yr">2023</div>
+                                    </div>
+                                    <a href="#" class="notice-text flex-grow-1">বার্ষিক পরীক্ষা ২০২৩ ইং</a>
+                                    <div class="notice-views text-muted d-flex flex-column gap-0 align-items-center">
+                                        <span>
+                                            <i class="bi bi-eye me-1"></i>
+                                        </span>
+                                        <span>
+                                            270
+                                        </span>
+                                    </div>
+                                </li>
+                                <li class="notice-item d-flex align-items-center">
+                                    <div class="notice-date text-center">
+                                        <div class="mon">Sep</div>
+                                        <div class="day">25</div>
+                                        <div class="yr">2023</div>
+                                    </div>
+                                    <a href="#" class="notice-text flex-grow-1">বিশেষ জরুরী বিজ্ঞপ্তি</a>
+                                    <div class="notice-views text-muted d-flex flex-column gap-0 align-items-center">
+                                        <span>
+                                            <i class="bi bi-eye me-1"></i>
+                                        </span>
+                                        <span>
+                                            253
+                                        </span>
+                                    </div>
+                                </li>
+                                <li class="notice-item d-flex align-items-center">
+                                    <div class="notice-date text-center">
+                                        <div class="mon">Sep</div>
+                                        <div class="day">21</div>
+                                        <div class="yr">2023</div>
+                                    </div>
+                                    <a href="#" class="notice-text flex-grow-1">চতুর্থ গণ বিতর্কিত সুবপারিশ প্রাপ্ত
+                                        শিক্ষক-শিক্ষিকাগণ গণপেশ নিয়োগ সংক্রান্ত</a>
+                                    <div class="notice-views text-muted d-flex flex-column gap-0 align-items-center">
+                                        <span>
+                                            <i class="bi bi-eye me-1"></i>
+                                        </span>
+                                        <span>
+                                            238
+                                        </span>
+                                    </div>
+                                </li>
+                                <li class="notice-item d-flex align-items-center">
+                                    <div class="notice-date text-center">
+                                        <div class="mon">Sep</div>
+                                        <div class="day">13</div>
+                                        <div class="yr">2023</div>
+                                    </div>
+                                    <a href="#" class="notice-text flex-grow-1">বার্ষিক পরীক্ষা ২০২৩</a>
+                                    <div class="notice-views text-muted d-flex flex-column gap-0 align-items-center">
+                                        <span>
+                                            <i class="bi bi-eye me-1"></i>
+                                        </span>
+                                        <span>
+                                            236
+                                        </span>
+                                    </div>
+                                </li>
+                                <li class="notice-item d-flex align-items-center">
+                                    <div class="notice-date text-center">
+                                        <div class="mon">Sep</div>
+                                        <div class="day">11</div>
+                                        <div class="yr">2023</div>
+                                    </div>
+                                    <a href="#" class="notice-text flex-grow-1">আলিম ১ম বর্ষ ও কামিল ১ম বর্ষের নবীন
+                                        বরণ
+                                        ও ছত্রব অনুষ্ঠান</a>
+                                    <div class="notice-views text-muted d-flex flex-column gap-0 align-items-center">
+                                        <span>
+                                            <i class="bi bi-eye me-1"></i>
+                                        </span>
+                                        <span>
+                                            407
+                                        </span>
+                                    </div>
+                                </li>
+                                <li class="notice-item d-flex align-items-center">
+                                    <div class="notice-date text-center">
+                                        <div class="mon">Aug</div>
+                                        <div class="day">30</div>
+                                        <div class="yr">2023</div>
+                                    </div>
+                                    <a href="#" class="notice-text flex-grow-1">আলিম পরীক্ষা ২০২৩ এর সময়সূচি</a>
+                                    <div class="notice-views text-muted d-flex flex-column gap-0 align-items-center">
+                                        <span>
+                                            <i class="bi bi-eye me-1"></i>
+                                        </span>
+                                        <span>
+                                            227
+                                        </span>
+                                    </div>
+                                </li>
+                                <li class="notice-item d-flex align-items-center">
+                                    <div class="notice-date text-center">
+                                        <div class="mon">Aug</div>
+                                        <div class="day">30</div>
+                                        <div class="yr">2023</div>
+                                    </div>
+                                    <a href="#" class="notice-text flex-grow-1">দাখিল ও ৯ম শ্রেণিতে রেজিস্ট্রেশন
+                                        সম্পন্ন
+                                        করার নিয়মাবলী - মাদরাসা অফিস</a>
+                                    <div class="notice-views text-muted d-flex flex-column gap-0 align-items-center">
+                                        <span>
+                                            <i class="bi bi-eye me-1"></i>
+                                        </span>
+                                        <span>
+                                            305
+                                        </span>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="p-2 border-top text-end notice-all-btn d-flex justify-content-end">
+                                <a href="#"
+                                    class="btn btn-primary btn-sm d-flex justify-content-center align-items-center gap-2">
+                                    সব নোটিশ দেখুন
+                                    <i class="bi bi-arrow-right-short fs-4"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Feature grid -->
+                    <div class="feature-grid row g-3 mb-4">
+                        <div class="col-lg-6">
+                            <div class="panel h-100">
+                                <div class="panel__header d-flex align-items-center justify-content-between">
+                                    <h4 class="panel__title mb-0">প্রতিষ্ঠান সম্পর্কে</h4>
+                                </div>
+                                <div class="panel__body d-flex gap-3 align-items-start">
+                                    <img src="https://cdn-icons-png.flaticon.com/512/3556/3556862.png"
+                                        class="feature-icon" alt="about">
+                                    <ul class="list-unstyled mb-0 small feature-list">
+                                        <li>
+                                            <a href="">
+                                                <i class="bi bi-caret-right-fill"></i> প্রতিষ্ঠানের ইতিহাস
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="">
+                                                <i class="bi bi-caret-right-fill"></i> সংক্ষিপ্ত পরিচিতি
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="">
+                                                <i class="bi bi-caret-right-fill"></i> প্রতিষ্ঠানের অবকাঠামো
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="">
+                                                <i class="bi bi-caret-right-fill"></i> আমাদের অর্জন
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="panel h-100">
+                                <div class="panel__header d-flex align-items-center justify-content-between">
+                                    <h4 class="panel__title mb-0">অ্যাডমিশন</h4>
+                                </div>
+                                <div class="panel__body d-flex gap-3 align-items-start">
+                                    <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
+                                        class="feature-icon" alt="admission">
+                                    <ul class="list-unstyled mb-0 small feature-list">
+                                        <li><a href=""><i class="bi bi-caret-right-fill"></i> ভর্তি আবেদন</a></li>
+                                        <li><a href=""><i class="bi bi-caret-right-fill"></i> ছাত্রছাত্রীদের আসন
+                                                সংখ্যা</a></li>
+                                        <li><a href=""><i class="bi bi-caret-right-fill"></i> শিক্ষাবৃত্তি</a></li>
+                                        <li><a href=""><i class="bi bi-caret-right-fill"></i> মেধাবৃত্তি</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="panel h-100">
+                                <div class="panel__header d-flex align-items-center justify-content-between">
+                                    <h4 class="panel__title mb-0">কোর্সসমূহ</h4>
+                                </div>
+                                <div class="panel__body d-flex gap-3 align-items-start">
+                                    <img src="https://cdn-icons-png.flaticon.com/512/3181/3181875.png"
+                                        class="feature-icon" alt="courses">
+                                    <ul class="list-unstyled mb-0 small feature-list">
+                                        <li><a href=""><i class="bi bi-caret-right-fill"></i> উচ্চ মাধ্যমিক</a></li>
+                                        <li><a href=""><i class="bi bi-caret-right-fill"></i> উচ্চ মাধ্যমিক (বি.এম)</a>
+                                        </li>
+                                        <li><a href=""><i class="bi bi-caret-right-fill"></i> ডিপ্লোমা</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="panel h-100">
+                                <div class="panel__header d-flex align-items-center justify-content-between">
+                                    <h4 class="panel__title mb-0">একাডেমিক পেজসমূহ</h4>
+                                </div>
+                                <div class="panel__body d-flex gap-3 align-items-start">
+                                    <img src="https://cdn-icons-png.flaticon.com/512/9445/9445367.png"
+                                        class="feature-icon" alt="academic">
+                                    <ul class="list-unstyled mb-0 small feature-list">
+                                        <li><a href=""><i class="bi bi-caret-right-fill"></i> সিলেবাস</a></li>
+                                        <li><a href=""><i class="bi bi-caret-right-fill"></i> স্কুল ক্যালেন্ডার</a></li>
+                                        <li><a href=""><i class="bi bi-caret-right-fill"></i> পাঠ পরিকল্পনা</a></li>
+                                        <li><a href=""><i class="bi bi-caret-right-fill"></i> একাডেমিক ক্যাটালগ</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="panel h-100">
+                                <div class="panel__header d-flex align-items-center justify-content-between">
+                                    <h4 class="panel__title mb-0">পরীক্ষার সময়সূচি ও ফলাফল</h4>
+                                </div>
+                                <div class="panel__body d-flex gap-3 align-items-start">
+                                    <img src="https://cdn-icons-png.flaticon.com/512/1055/1055644.png"
+                                        class="feature-icon" alt="results">
+                                    <ul class="list-unstyled mb-0 small feature-list">
+                                        <li><a href=""><i class="bi bi-caret-right-fill"></i> পরীক্ষা সময়সূচি</a></li>
+                                        <li><a href=""><i class="bi bi-caret-right-fill"></i> মাধ্যমিক ও উচ্চমাধ্যমিক
+                                                রেজাল্ট</a></li>
+                                        <li><a href=""><i class="bi bi-caret-right-fill"></i> জাতীয় বিশ্ববিদ্যালয়
+                                                রেজাল্ট</a></li>
+                                        <li><a href=""><i class="bi bi-caret-right-fill"></i> অভ্যন্তরীণ পরীক্ষা
+                                                রেজাল্ট</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="panel h-100">
+                                <div class="panel__header d-flex align-items-center justify-content-between">
+                                    <h4 class="panel__title mb-0">সহশিক্ষা কার্যক্রম</h4>
+                                </div>
+                                <div class="panel__body d-flex gap-3 align-items-start">
+                                    <img src="https://cdn-icons-png.flaticon.com/512/2422/2422562.png"
+                                        class="feature-icon" alt="co-curricular">
+                                    <ul class="list-unstyled mb-0 small feature-list">
+                                        <li><a href=""><i class="bi bi-caret-right-fill"></i> রোবোটিক্স ক্লাব</a></li>
+                                        <li><a href=""><i class="bi bi-caret-right-fill"></i> ডিবেট ক্লাব</a></li>
+                                        <li><a href=""><i class="bi bi-caret-right-fill"></i> ক্লাব</a></li>
+                                        <li><a href=""><i class="bi bi-caret-right-fill"></i> বিজ্ঞানসিটি</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="panel h-100">
+                                <div class="panel__header d-flex align-items-center justify-content-between">
+                                    <h4 class="panel__title mb-0">ব্লগ ও গ্যালারি</h4>
+                                </div>
+                                <div class="panel__body d-flex gap-3 align-items-start">
+                                    <img src="https://cdn-icons-png.flaticon.com/512/10885/10885956.png"
+                                        class="feature-icon" alt="blog-gallery">
+                                    <ul class="list-unstyled mb-0 small feature-list">
+                                        <li><a href=""><i class="bi bi-caret-right-fill"></i> সংবাদ ও ইভেন্ট</a></li>
+                                        <li><a href=""><i class="bi bi-caret-right-fill"></i> ফটো গ্যালারি</a></li>
+                                        <li><a href=""><i class="bi bi-caret-right-fill"></i> ভিডিও গ্যালারি</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- সংবাদ এবং ইভেন্ট -->
+                    <div class="mb-4 section-news-event">
+                        <div class="section-header px-3 py-2">
+                            <h4 class="m-0 text-white panel__title mb-0">সংবাদ এবং ইভেন্ট</h4>
+                        </div>
+                        <div class="row g-3 mt-0 mb-2 pt-2">
+                            <div class="col-md-6 col-lg-4">
+                                <a href="">
+                                    <div class="card h-100 shadow-sm">
+                                        <img src="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg"
+                                            class="card-img-top object-fit-cover" alt="news-1" style="height: 180px;">
+                                        <div class="card-body">
+                                            <h6 class="card-title">মহান বিজয় দিবসের শুভেচ্ছা</h6>
+                                            <p class="card-text small text-muted">
+                                                মহান মুক্তিযুদ্ধ এবং সাহসী বীরদেরশ্রদ্ধায় বিদ্যালয়ের বিশেষ অনুষ্ঠান...
+                                            </p>
+                                        </div>
+                                        <div class="card-footer small text-muted bg-secondary bg-opacity-10">Last
+                                            updated 2 days ago</div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-md-6 col-lg-4">
+                                <a href="">
+                                    <div class="card h-100 shadow-sm">
+                                        <img src="https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg"
+                                            class="card-img-top object-fit-cover" alt="news-2" style="height: 180px;">
+                                        <div class="card-body">
+                                            <h6 class="card-title">প্রতিষ্ঠাতার প্রতি শ্রদ্ধাঞ্জলি</h6>
+                                            <p class="card-text small text-muted">প্রতিষ্ঠাতা মহোদয়ের জন্মবার্ষিকী
+                                                উপলক্ষে
+                                                দোয়া ও স্মরণসভা অনুষ্ঠিত...</p>
+                                        </div>
+                                        <div class="card-footer small text-muted bg-secondary bg-opacity-10">Last
+                                            updated 1 week ago</div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-md-6 col-lg-4">
+                                <a href="">
+                                    <div class="card h-100 shadow-sm">
+                                        <img src="https://images.pexels.com/photos/3182743/pexels-photo-3182743.jpeg"
+                                            class="card-img-top object-fit-cover" alt="news-3" style="height: 180px;">
+                                        <div class="card-body">
+                                            <h6 class="card-title">নবীন বরণ ও ছত্রব অনুষ্ঠান</h6>
+                                            <p class="card-text small text-muted">কামিল ২০২৫ শিক্ষাবর্ষের নবীন বরণ এবং
+                                                সাংস্কৃতিক অনুষ্ঠান আয়োজিত হয়...</p>
+                                        </div>
+                                        <div class="card-footer small text-muted bg-secondary bg-opacity-10">Last
+                                            updated 2 years ago
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="p-2 text-end notice-all-btn d-flex justify-content-end">
+                            <a href="#"
+                                class="btn btn-primary btn-sm d-flex justify-content-center align-items-center gap-2">
+                                আরও দেখুন
+                                <i class="bi bi-arrow-right-short fs-4"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- ফটো গ্যালারি -->
+                    <div class="mb-4 section-photo-gallery">
+                        <div class="section-header px-3 py-2">
+                            <h4 class="m-0 text-white panel__title mb-0">ফটো গ্যালারি</h4>
+                        </div>
+                        <div class="row g-3 mt-0 mb-2 pt-2">
+                            <div class="col-6 col-md-4 col-lg-3">
+                                <a href="">
+                                    <div class="card h-100 shadow-sm border-1 gallery-card">
+                                        <img src="https://images.pexels.com/photos/1001914/pexels-photo-1001914.jpeg"
+                                            class="card-img-top object-fit-cover" alt="gallery-1">
+                                        <div class="card-body py-2">
+                                            <h6 class="card-title small mb-1">বৃক্ষ রোপণ কর্মসূচি</h6>
+                                        </div>
+                                        <div class="card-footer small text-muted bg-secondary bg-opacity-10">
+                                            2 Photos
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-6 col-md-4 col-lg-3">
+                                <a href="">
+                                    <div class="card h-100 shadow-sm border-1 gallery-card">
+                                        <img src="https://images.pexels.com/photos/3184652/pexels-photo-3184652.jpeg"
+                                            class="card-img-top object-fit-cover" alt="gallery-2">
+                                        <div class="card-body py-2">
+                                            <h6 class="card-title small mb-1">নবীন বরণ ও ছত্রব অনুষ্ঠান</h6>
+                                        </div>
+                                        <div class="card-footer small text-muted bg-secondary bg-opacity-10">
+                                            1 Photos
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-6 col-md-4 col-lg-3">
+                                <a href="">
+                                    <div class="card h-100 shadow-sm border-1 gallery-card">
+                                        <img src="https://images.pexels.com/photos/267885/pexels-photo-267885.jpeg"
+                                            class="card-img-top object-fit-cover" alt="gallery-3">
+                                        <div class="card-body py-2">
+                                            <h6 class="card-title small mb-1">জাতীয় দিবস পালন</h6>
+                                        </div>
+                                        <div class="card-footer small text-muted bg-secondary bg-opacity-10">
+                                            2 Photos
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-6 col-md-4 col-lg-3">
+                                <a href="">
+                                    <div class="card h-100 shadow-sm border-1 gallery-card">
+                                        <img src="https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg"
+                                            class="card-img-top object-fit-cover" alt="gallery-4">
+                                        <div class="card-body py-2">
+                                            <h6 class="card-title small mb-1">ক্রীড়া প্রতিযোগিতা</h6>
+                                        </div>
+                                        <div class="card-footer small text-muted bg-secondary bg-opacity-10">
+                                            3 Photos
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="p-2 text-end notice-all-btn d-flex justify-content-end">
+                            <a href="#"
+                                class="btn btn-primary btn-sm d-flex justify-content-center align-items-center gap-2">
+                                আরও দেখুন
+                                <i class="bi bi-arrow-right-short fs-4"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- GOOGLE maps -->
+                    <div class="panel mb-4 panel--map">
+                        <div class="panel__header">
+                            <h3 class="panel__title">আমাদের অবস্থান</h3>
+                        </div>
+                        <div class="panel__body">
+                            <div class="border rounded overflow-hidden shadow-sm map-embed">
+                                <div class="ratio ratio-21x9">
+                                    <iframe
+                                        src="https://www.google.com/maps?q=Amtali+Bandar+Hossainia+Kamil+Madrasa&hl=bn&z=16&output=embed"
+                                        style="border:0;" allowfullscreen loading="lazy"
+                                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <aside class="col-lg-3 col-md-4 side-bar">
+                    <div class="">
+                        <!-- প্রতিষ্ঠাতা ও প্রাণদাতা -->
+                        <div class="panel mb-3 person">
+                            <div class="panel__header">
+                                <h3 class="panel__title text-center">প্রতিষ্ঠাতা ও প্রাণদাতা</h3>
+                            </div>
+                            <div class="panel__body text-center">
+                                <img class="img-fluid rounded shadow-sm sidebar-photo mb-2"
+                                    src="https://images.pexels.com/photos/458825/pexels-photo-458825.jpeg"
+                                    alt="Founder">
+                                <div class="fw-medium text-black">আলহাজ্ব এবিএম আহমদ আলী আকন</div>
+                                <div class="">
+                                    <a href="" class="text-decoration-none text-muted small">
+                                        বিস্তারিত পড়ুন ...
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- সভাপতির বাণী -->
+                        <div class="panel mb-3 person">
+                            <div class="panel__header">
+                                <h3 class="panel__title text-center">সভাপতির বাণী</h3>
+                            </div>
+                            <div class="panel__body text-center">
+                                <img class="img-fluid rounded shadow-sm sidebar-photo mb-2"
+                                    src="https://images.pexels.com/photos/937481/pexels-photo-937481.jpeg"
+                                    alt="Chairman">
+                                <div class="fw-semibold">প্রফেসর গাজী মোঃ কাওছার</div>
+                                <div class="">
+                                    <a href="" class="text-decoration-none text-muted small">
+                                        বিস্তারিত পড়ুন ...
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- অধ্যক্ষের বাণী -->
+                        <div class="panel mb-3 person">
+                            <div class="panel__header">
+                                <h3 class="panel__title text-center">অধ্যক্ষের বাণী</h3>
+                            </div>
+                            <div class="panel__body text-center">
+                                <img class="img-fluid rounded shadow-sm sidebar-photo mb-2"
+                                    src="https://images.pexels.com/photos/819530/pexels-photo-819530.jpeg"
+                                    alt="Principal">
+                                <div class="fw-semibold">মোহাম্মদ ইউনুছ হাওলাদার</div>
+                                <div class="">
+                                    <a href="" class="text-decoration-none text-muted small">
+                                        বিস্তারিত পড়ুন ...
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- একাডেমিক লিংক -->
+                        <div class="panel mb-3 academic-link">
+                            <div class="panel__header">
+                                <h3 class="panel__title text-center">একাডেমিক লিংক</h3>
+                            </div>
+                            <div class="panel__body p-0">
+                                <div class="list-group list-group-flush">
+                                    <a href="#"
+                                        class="list-group-item list-group-item-action d-flex align-items-center gap-2">
+                                        <i class="bi bi-bank2 text-primary"></i><span>প্রতিষ্ঠানের ইতিহাস</span>
+                                    </a>
+                                    <a href="#"
+                                        class="list-group-item list-group-item-action d-flex align-items-center gap-2">
+                                        <i class="bi bi-person-badge text-primary"></i><span>প্রতিষ্ঠাতা</span>
+                                    </a>
+                                    <a href="#"
+                                        class="list-group-item list-group-item-action d-flex align-items-center gap-2">
+                                        <i class="bi bi-journal-text text-primary"></i><span>আমাদের অর্জন</span>
+                                    </a>
+                                    <a href="#"
+                                        class="list-group-item list-group-item-action d-flex align-items-center gap-2">
+                                        <i class="bi bi-link-45deg text-primary"></i><span>লিংকলিস্ট</span>
+                                    </a>
+                                    <a href="#"
+                                        class="list-group-item list-group-item-action d-flex align-items-center gap-2">
+                                        <i class="bi bi-images text-primary"></i><span>ফটো গ্যালারি</span>
+                                    </a>
+                                    <a href="#"
+                                        class="list-group-item list-group-item-action d-flex align-items-center gap-2">
+                                        <i class="bi bi-camera-reels text-primary"></i><span>ভিডিও গ্যালারি</span>
+                                    </a>
+                                    <a href="#"
+                                        class="list-group-item list-group-item-action d-flex align-items-center gap-2">
+                                        <i class="bi bi-envelope-open text-primary"></i><span>যোগাযোগ</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- গুরুত্বপূর্ণ লিংক -->
+                        <div class="panel mb-3 important-link">
+                            <div class="panel__header">
+                                <h3 class="panel__title text-center">গুরুত্বপূর্ণ লিংক</h3>
+                            </div>
+                            <div class="panel__body p-0">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">
+                                        <a href="#" class="d-flex align-items-center text-decoration-none"><i
+                                                class="bi bi-caret-right-fill me-2 text-primary"></i>বাংলাদেশ
+                                            পোর্টাল
+                                        </a>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <a href="#" class="d-flex align-items-center text-decoration-none"><i
+                                                class="bi bi-caret-right-fill me-2 text-primary"></i>ব্যাংকিং
+                                        </a>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <a href="#" class="d-flex align-items-center text-decoration-none"><i
+                                                class="bi bi-caret-right-fill me-2 text-primary"></i>শিক্ষক বাতায়ন
+                                        </a>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <a href="#" class="d-flex align-items-center text-decoration-none"><i
+                                                class="bi bi-caret-right-fill me-2 text-primary"></i>শিক্ষা
+                                            মন্ত্রণালয়
+                                        </a>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <a href="#" class="d-flex align-items-center text-decoration-none"><i
+                                                class="bi bi-caret-right-fill me-2 text-primary"></i>প্রধানমন্ত্রীর
+                                            শিক্ষা সহায়তা ট্রাস্ট
+                                        </a>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <a href="#" class="d-flex align-items-center text-decoration-none"><i
+                                                class="bi bi-caret-right-fill me-2 text-primary"></i>মাধ্যমিক ও উচ্চ
+                                            শিক্ষা অধিদপ্তর
+                                        </a>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <a href="#" class="d-flex align-items-center text-decoration-none"><i
+                                                class="bi bi-caret-right-fill me-2 text-primary"></i>জাতীয়
+                                            বিশ্ববিদ্যালয়
+                                        </a>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <a href="#" class="d-flex align-items-center text-decoration-none"><i
+                                                class="bi bi-caret-right-fill me-2 text-primary"></i>উচ্চ মাধ্যমিক
+                                            শিক্ষা বোর্ড, বরিশাল
+                                        </a>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <a href="#" class="d-flex align-items-center text-decoration-none"><i
+                                                class="bi bi-caret-right-fill me-2 text-primary"></i>মাদ্রাসা শিক্ষা
+                                            বোর্ড
+                                        </a>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <a href="#" class="d-flex align-items-center text-decoration-none"><i
+                                                class="bi bi-caret-right-fill me-2 text-primary"></i>কারিগরি শিক্ষা
+                                            অধিদপ্তর
+                                        </a>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <a href="#" class="d-flex align-items-center text-decoration-none"><i
+                                                class="bi bi-caret-right-fill me-2 text-primary"></i>বাংলাদেশ কারিগরি
+                                            শিক্ষা বোর্ড
+                                        </a>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <a href="#" class="d-flex align-items-center text-decoration-none"><i
+                                                class="bi bi-caret-right-fill me-2 text-primary"></i>বাংলাদেশ উন্মুক্ত
+                                            বিশ্ববিদ্যালয়
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- social media link -->
+                    <div class="panel mb-3 sidebar-social">
+                        <div class="panel__header">
+                            <h3 class="panel__title text-center">সামাজিক যোগাযোগ</h3>
+                        </div>
+                        <div class="panel__body">
+                            <div class="d-flex flex-wrap align-items-center social-icons">
+                                <a href="#" class="social-icon" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                                <a href="#" class="social-icon" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                                <a href="#" class="social-icon" aria-label="Twitter X"><i class="bi bi-twitter-x"></i></a>
+                                <a href="#" class="social-icon" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                                <a href="#" class="social-icon" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                                <a href="#" class="social-icon" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+                                <a href="#" class="social-icon" aria-label="Telegram"><i class="bi bi-telegram"></i></a>
+                                <a href="#" class="social-icon" aria-label="Email"><i class="bi bi-envelope-fill"></i></a>
+                                <a href="#" class="social-icon" aria-label="Website"><i class="bi bi-globe2"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </section>
+    </main>
+
+    <!-- footer section -->
+    <footer class="site-footer mt-4 pt-4">
+        <div class="container-lg px-3 pt-4">
+            <div class="row gy-4 align-items-start py-4">
+                <div class="col-12 col-lg-3 text-center text-lg-start">
+                    <img src="/img/logo.png" alt="মাদ্রাসার লোগো" class="footer-logo img-fluid mb-2">
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <h5 class="footer-title">যোগাযোগ</h5>
+                    <ul class="list-unstyled mb-0 footer-list">
+                        <li class="mb-1">
+                            <i class="bi bi-telephone me-2"></i><a href="tel:+8801714-599363"
+                                class="text-decoration-none text-white">+8801714-599363</a>
+                        </li>
+                        <li class="mb-1">
+                            <i class="bi bi-envelope me-2"></i><a href="mailtomadrasa100069@gmail.com"
+                                class="text-decoration-none text-white">madrasa100069@gmail.com</a>
+                        </li>
+                        <li class="mb-1">
+                            <i class="bi bi-geo-alt me-2"></i>ডাকঘর: আমতলী, উপজেলা: আমতলী, জেলা: বরগুনা
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-3">
+                    <h5 class="footer-title">গুরুত্বপূর্ণ লিংক</h5>
+                    <ul class="list-unstyled mb-0 footer-links">
+                        <li><a href="#">হোম পেজ</a></li>
+                        <li><a href="#">প্রতিষ্ঠান সম্পর্কে</a></li>
+                        <li><a href="#">ভর্তি আবেদন</a></li>
+                        <li><a href="#">সংবাদ এবং ইভেন্ট</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-3">
+                    <h5 class="footer-title">একাডেমিক লিংক</h5>
+                    <ul class="list-unstyled mb-0 footer-links">
+                        <li><a href="#">নোটিশ</a></li>
+                        <li><a href="#">ক্লাস রুটিন</a></li>
+                        <li><a href="#">ফলাফল</a></li>
+                        <li><a href="#">সিলেবাস</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <hr class="footer-divider my-4">
+
+            <div
+                class="d-flex flex-column flex-md-row justify-content-between align-items-center small text-white-50 py-2">
+                <div>© ২০২৫ আমতলী বন্দর হোসাইনিয়া কামিল মাদ্রাসা — সর্বস্বত্ব সংরক্ষিত</div>
+                <div>Powered by <a href="https://barishalsoft.com" target="_blank" rel="noopener"
+                        class="text-decoration-none footer-powered">barishalsoft.com</a></div>
+            </div>
+        </div>
+    </footer>
+
     <!-- bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
