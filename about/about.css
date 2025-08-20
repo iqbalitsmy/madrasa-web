@@ -1,0 +1,7 @@
+.notice-label, .notice-label-box {
+    min-height: 100% !important;
+}
+
+.panel {
+    background-color: var(--secondary-color);
+}

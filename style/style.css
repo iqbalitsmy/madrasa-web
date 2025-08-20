@@ -9,7 +9,7 @@
     --font-family-2: 'Roboto', sans-serif;
     --primary-color: #609513;
     --primary-color-dark: #0f2741;
-    --secondary-color: #7c3aed;
+    --secondary-color: #f8f9fa;
 
     --topbar-bg: #d4c66a;
     --nav-text: #ffffff;
@@ -135,6 +135,10 @@
 
 .mainnav {
     background: var(--primary-color-dark);
+}
+
+header{
+    display: unset;
 }
 
 /* Base link style */
